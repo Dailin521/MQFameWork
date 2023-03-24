@@ -8,7 +8,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <RootNamespace></RootNamespace>
+    <RootNamespace>FrameWorkDesign.Example</RootNamespace>
     <ProjectGuid>{3AF824DE-7BAE-C214-6226-ACB9D6E9DC5F}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -56,7 +56,12 @@
     <Analyzer Include="C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\FrameWorkDesign\Example\Scripts\Enemy.cs" />
+    <Compile Include="Assets\FrameWorkDesign\Example\Scripts\Game\Enemy.cs" />
+    <Compile Include="Assets\FrameWorkDesign\Example\Scripts\UI\GameStartPanel.cs" />
+    <Compile Include="Assets\FrameWorkDesign\Example\Scripts\Game\Game.cs" />
+    <Compile Include="Assets\FrameWorkDesign\Example\Scripts\Event\GameStartEvent.cs" />
+    <Compile Include="Assets\FrameWorkDesign\Example\Scripts\Event\GamePassEvent.cs" />
+    <Compile Include="Assets\FrameWorkDesign\Example\Scripts\UI\UI.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

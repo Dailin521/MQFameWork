@@ -10,7 +10,7 @@ namespace FrameWorkDesign.Example
             Destroy(gameObject);
             mKilledEnemyCount++;
             if (mKilledEnemyCount == 10)
-                GamePassPanel.SetActive(true);
+                GamePassEvent.Trigger();
         }
     }
 }
