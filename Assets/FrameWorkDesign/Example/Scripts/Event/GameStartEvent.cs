@@ -1,8 +1,8 @@
 ﻿using System;
-using UnityEngine;
+
 namespace FrameWorkDesign.Example
 {
-    public class GameStartEvent : MonoBehaviour
+    public class GameStartEvent 
     {
         private static Action mAction;
         public static void Register(Action action)
