@@ -1,6 +1,8 @@
 Library/
+UserSettings/
 Logs/
 obj/
 Temp/
 *.vsidx
 *.lock
+.vs/
