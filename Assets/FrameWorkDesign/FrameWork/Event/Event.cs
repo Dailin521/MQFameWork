@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace FrameWorkDesign.Example
+namespace FrameWorkDesign
 {
     public class Event<T> where T : Event<T>
     {

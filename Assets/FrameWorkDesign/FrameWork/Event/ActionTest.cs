@@ -7,30 +7,23 @@ namespace FrameWorkDesign.Example
 {
     public class ActionTest : MonoBehaviour
     {
-
-
         //一般情况
-        char b = new object();// 父类指向子类，可以
-        object a = new char(); //子类指向父类，不安全，子类数据可能更多
-        public static void NoRetS(string a) { }
-        public static void NoRetC(char a) { }
-        ////逆变 in
-        Action<char> b1 = NoRetS;//子类指向 父类 ，允许。
-        Action<char> b2 = NoRetC;  //父类指向子类 报错   
 
-
-        public static char RetC()
+        private void Start()
         {
-            return new char();
-        }
-        public static char RetB()
-        {
-            return new char();
-        }
-        // 协变out       
-        Func<char> f1 = RetB;    //子类指向 父类  报错
-        Func<char> f2 = RetC;     //父类指向子类！！！ 没问题
+            //默认情况下只允许单个类之间的转换    子类引用->父类引用 （类型安全）
 
+            Func<A, B> f = OnAction; //Func返回值是B 父类，      A->B ,子类转父类。（类型安全）协变out
+                                     //Func 传参数是A，子类      B->A,父类转子类。  调用时，形参更广  逆变in
+            f.Invoke(new A());
+        }
+        private A OnAction(B b)
+        {
+            return b as A ?? new A();
+        }
+
+        public class B { }
+        public class A : B { }
 
     }
 }

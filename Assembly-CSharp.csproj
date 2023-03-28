@@ -57,13 +57,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\FrameWorkDesign\Example\Scripts\Game\Game.cs" />
+    <Compile Include="Assets\FrameWorkDesign\FrameWork\Event\ActionTest.cs" />
     <Compile Include="Assets\FrameWorkDesign\Example\Scripts\Event\GamePassEvent.cs" />
     <Compile Include="Assets\FrameWorkDesign\Example\Scripts\UI\GameStartPanel.cs" />
     <Compile Include="Assets\FrameWorkDesign\Example\Scripts\Event\GameStartEvent.cs" />
     <Compile Include="Assets\FrameWorkDesign\Example\Scripts\UI\UI.cs" />
     <Compile Include="Assets\FrameWorkDesign\Example\Scripts\Game\Enemy.cs" />
     <Compile Include="Assets\FrameWorkDesign\FrameWork\Event\Event.cs" />
-    <Compile Include="Assets\FrameWorkDesign\FrameWork\Event\ActionTest.cs" />
+    <Compile Include="Assets\FrameWorkDesign\Example\Scripts\Model\GameModel.cs" />
+    <Compile Include="Assets\FrameWorkDesign\Example\Scripts\Event\KilledOneEnemyEvent.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
