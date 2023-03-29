@@ -26,3 +26,5 @@
 6.交互逻辑和表现逻辑
 	*交互逻辑：View->Model
 	*表现逻辑：Model->View
+7.表现逻辑游戏化-引入 BindableProperty
+	*表现逻辑用委托实现数据驱动
