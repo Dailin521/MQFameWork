@@ -71,6 +71,8 @@
     <Compile Include="Assets\FrameWorkDesign\Example\Scripts\Game\Enemy.cs" />
     <Compile Include="Assets\FrameWorkDesign\FrameWork\Event\Event.cs" />
     <Compile Include="Assets\FrameWorkDesign\Example\Scripts\Event\KilledOneEnemyEvent.cs" />
+    <Compile Include="Assets\FrameWorkDesign\Example\Scripts\Command\KillEnemyCommand.cs" />
+    <Compile Include="Assets\FrameWorkDesign\Example\Scripts\Command\GameStartCommand.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

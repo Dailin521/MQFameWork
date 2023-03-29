@@ -8,8 +8,7 @@ namespace FrameWorkDesign.Example
         public void OnMouseDown()
         {
             Destroy(gameObject);
-            KilledOneEnemyEvent.Trigger();
-
+            new KillEnemyCommand().Excute();
         }
     }
 }

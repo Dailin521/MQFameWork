@@ -10,7 +10,6 @@ namespace FrameWorkDesign.Example
         {
             GamePassEvent.Register(OnGamePass);
         }
-
         private void OnGamePass()
         {
             transform.Find("Canvas/GamePassPanel").gameObject.SetActive(true);

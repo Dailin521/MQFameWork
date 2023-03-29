@@ -11,7 +11,7 @@ namespace FrameWorkDesign.Example
             transform.Find("btnStart").GetComponent<Button>().onClick.AddListener(() =>
             {
                 gameObject.SetActive(false);
-                GameStartEvent.Trigger();
+                new GameStartCommand().Excute();
             });
         }
     }
