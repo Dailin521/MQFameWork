@@ -16,6 +16,7 @@ namespace FrameWorkDesign.Example
                 GamePassEvent.Trigger();
         }
 
+
         private void OnKilledEnemy()
         {
             GameModel.killCount.Value++;

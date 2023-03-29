@@ -68,6 +68,9 @@
     <Compile Include="Assets\FrameWorkDesign\Example\Scripts\Event\KilledOneEnemyEvent.cs" />
     <Compile Include="Assets\FrameWorkDesign\CounterApp\Scripts\CounterViewController.cs" />
     <Compile Include="Assets\FrameWorkDesign\FrameWork\BindableProperty\BindableProperty.cs" />
+    <Compile Include="Assets\FrameWorkDesign\FrameWork\ICommand\ICommand.cs" />
+    <Compile Include="Assets\FrameWorkDesign\CounterApp\Command\AddCountCommand.cs" />
+    <Compile Include="Assets\FrameWorkDesign\CounterApp\Command\SubCountCommand.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

@@ -13,13 +13,11 @@ namespace CounterApp
             CountModel.Count.OnValueChanged += OnCountChanged;
             transform.Find("BtnAdd").GetComponent<Button>().onClick.AddListener(delegate
             {
-                CountModel.Count.Value++;
-
+                new AddCountCommand().Excute();
             });
             transform.Find("BtnSub").GetComponent<Button>().onClick.AddListener(delegate
             {
-                CountModel.Count.Value--;
-
+                new SubCountCommand().Excute();
             });
         }
         private void OnCountChanged(int obj)
@@ -30,12 +28,12 @@ namespace CounterApp
         {
             CountModel.Count.OnValueChanged -= OnCountChanged;
         }
-        public static class CountModel
+    }
+    public static class CountModel
+    {
+        public static BindableProperty<int> Count = new BindableProperty<int>()
         {
-            public static BindableProperty<int> Count = new BindableProperty<int>()
-            {
-                Value = 0,
-            };
-        }
+            Value = 0,
+        };
     }
 }
