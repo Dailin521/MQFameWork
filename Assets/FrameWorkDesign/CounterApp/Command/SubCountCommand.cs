@@ -5,7 +5,8 @@ namespace CounterApp
     {
         public void Excute()
         {
-            CountModel.Instance.Count.Value--;
+            CounterApp.Get<CountModel>()
+            .Count.Value--;
         }
     }
 }

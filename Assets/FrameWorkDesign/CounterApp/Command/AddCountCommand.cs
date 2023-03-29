@@ -1,11 +1,13 @@
 ﻿using FrameWorkDesign;
+using UnityEngine;
 namespace CounterApp
 {
     public struct AddCountCommand : ICommand
     {
         public void Excute()
         {
-            CountModel.Instance.Count.Value++;
+            CounterApp.Get<CountModel>()
+            .Count.Value++;
         }
     }
 }

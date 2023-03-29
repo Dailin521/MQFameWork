@@ -3,7 +3,7 @@ namespace FrameWorkDesign
 {
     public class BindableProperty<T> where T : IEquatable<T>
     {
-        private T mValue = default(T);
+        private T mValue = default;
         public Action<T> OnValueChanged;
         public T Value
         {

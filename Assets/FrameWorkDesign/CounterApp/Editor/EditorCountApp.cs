@@ -1,8 +1,8 @@
-﻿using CounterApp;
+﻿
 using UnityEditor;
 using UnityEngine;
 
-namespace FrameWorkDesign.Example
+namespace CounterApp
 {
     public class EditorCountApp : EditorWindow
     {
@@ -20,7 +20,7 @@ namespace FrameWorkDesign.Example
             {
                 new AddCountCommand().Excute();
             }
-            GUILayout.Label(CountModel.Instance.Count.Value.ToString());//GUI是实时渲染的
+            GUILayout.Label(CounterApp.Get<CountModel>().Count.Value.ToString());//GUI是实时渲染的
             if (GUILayout.Button("-"))
             {
                 new SubCountCommand().Excute();

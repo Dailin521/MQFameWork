@@ -76,6 +76,8 @@
     <Compile Include="Assets\FrameWorkDesign\Example\Scripts\Singleton\Singleton.cs" />
     <Compile Include="Assets\FrameWorkDesign\FrameWork\IOC\IOCContainer.cs" />
     <Compile Include="Assets\FrameWorkDesign\Example\IOC\IOCExample.cs" />
+    <Compile Include="Assets\FrameWorkDesign\FrameWork\Architecture\Architecture.cs" />
+    <Compile Include="Assets\FrameWorkDesign\CounterApp\Scripts\CounterApp.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
