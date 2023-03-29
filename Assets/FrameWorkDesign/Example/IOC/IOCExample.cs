@@ -9,16 +9,27 @@ namespace FrameWorkDesign.Example
         IOCContainer container = new();
         void Start()
         {
-            container.Register(new BluetoothManager());
-            var blutoothManager = container.Get<BluetoothManager>();
+            container.Register<IBluetoothManager>(new BluetoothManager());
+            container.Register<IBluetoothManager>(new BluetoothManagerB());
+            var blutoothManager = container.Get<IBluetoothManager>();
             blutoothManager.Connect();
         }
-
-        class BluetoothManager
+        interface IBluetoothManager
+        {
+            void Connect();
+        }
+        class BluetoothManager : IBluetoothManager
         {
             public void Connect()
             {
-                Debug.Log("连接成功");
+                Debug.Log("连接成功A");
+            }
+        }
+        class BluetoothManagerB : IBluetoothManager
+        {
+            public void Connect()
+            {
+                Debug.Log("连接成功B");
             }
         }
     }
