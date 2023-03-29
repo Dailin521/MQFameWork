@@ -37,6 +37,5 @@ namespace CounterApp
                 Value = 0,
             };
         }
-
     }
 }

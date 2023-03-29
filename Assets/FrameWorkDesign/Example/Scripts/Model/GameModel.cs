@@ -2,7 +2,10 @@
 {
     public class GameModel
     {
-        public static int killCount;
-        public static int Gold;
-    }
+        public static BindableProperty<int> killCount = new BindableProperty<int>()
+        {
+            Value = 0
+        };
+    };
+
 }
