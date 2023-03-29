@@ -74,6 +74,8 @@
     <Compile Include="Assets\FrameWorkDesign\Example\Scripts\Command\KillEnemyCommand.cs" />
     <Compile Include="Assets\FrameWorkDesign\Example\Scripts\Command\GameStartCommand.cs" />
     <Compile Include="Assets\FrameWorkDesign\Example\Scripts\Singleton\Singleton.cs" />
+    <Compile Include="Assets\FrameWorkDesign\FrameWork\IOC\IOCContainer.cs" />
+    <Compile Include="Assets\FrameWorkDesign\Example\IOC\IOCExample.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
