@@ -10,7 +10,7 @@ namespace CounterApp
         // Start is called before the first frame update
         void Start()
         {
-            CountModel.Count.OnValueChanged += OnCountChanged;
+            CountModel.Instance.Count.OnValueChanged += OnCountChanged;
             transform.Find("BtnAdd").GetComponent<Button>().onClick.AddListener(delegate
             {
                 new AddCountCommand().Excute();
@@ -26,12 +26,13 @@ namespace CounterApp
         }
         private void OnDestroy()
         {
-            CountModel.Count.OnValueChanged -= OnCountChanged;
+            CountModel.Instance.Count.OnValueChanged -= OnCountChanged;
         }
     }
-    public static class CountModel
+    public class CountModel : Singleton<CountModel>
     {
-        public static BindableProperty<int> Count = new BindableProperty<int>()
+        private CountModel() { }
+        public BindableProperty<int> Count = new BindableProperty<int>()
         {
             Value = 0,
         };

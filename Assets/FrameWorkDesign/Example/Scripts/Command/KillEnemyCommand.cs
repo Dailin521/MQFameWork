@@ -8,8 +8,8 @@ namespace FrameWorkDesign.Example
     {
         public void Excute()
         {
-            GameModel.killCount.Value++;
-            if (GameModel.killCount.Value == 10)
+            GameModel.Instance.killCount.Value++;
+            if (GameModel.Instance.killCount.Value == 10)
             {
                 GamePassEvent.Trigger();
             }

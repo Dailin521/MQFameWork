@@ -20,7 +20,7 @@ namespace FrameWorkDesign.Example
             {
                 new AddCountCommand().Excute();
             }
-            GUILayout.Label(CountModel.Count.Value.ToString());//GUI是实时渲染的
+            GUILayout.Label(CountModel.Instance.Count.Value.ToString());//GUI是实时渲染的
             if (GUILayout.Button("-"))
             {
                 new SubCountCommand().Excute();
