@@ -8,7 +8,6 @@ namespace FrameWorkDesign.Example
     public class ActionTest : MonoBehaviour
     {
         //一般情况
-
         private void Start()
         {
             //默认情况下只允许单个类之间的转换    子类引用->父类引用 （类型安全）
@@ -21,7 +20,6 @@ namespace FrameWorkDesign.Example
         {
             return b as A ?? new A();
         }
-
         public class B { }
         public class A : B { }
 
