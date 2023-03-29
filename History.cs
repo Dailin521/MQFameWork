@@ -43,3 +43,7 @@
 	*分担Controller的交互逻辑
 	*struct 比 calss 有更好的内存管理效率
 	*CQRS读写分离
+10.CounterApp 编辑器扩展版本
+	*表现层 到 底层系统层 用 Command
+	*底层系统层 到 表现层 用委托或者时间（通知）
+	*表现层是可替换的
