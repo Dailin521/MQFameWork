@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
-using UnityEngine;
-using Debug = UnityEngine.Debug;
 
 namespace FrameWorkDesign
 {
@@ -11,6 +8,7 @@ namespace FrameWorkDesign
         T GetUtility<T>() where T : class;
         void RegisterUtility<T>(T utility);
         void RegisterModel<T>(T instance) where T : IModel;
+
     }
     public abstract class Architecture<T> : IArchitecture where T : Architecture<T>, new()
     {
@@ -56,7 +54,6 @@ namespace FrameWorkDesign
         {
             model.Architecture = this;
             mContainer.Register<T2>(model);
-            Debug.Log("isinit:" + mInited);
             if (!mInited)
             {
                 models.Add(model);

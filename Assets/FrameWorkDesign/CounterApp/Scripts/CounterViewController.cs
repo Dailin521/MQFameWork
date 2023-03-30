@@ -8,14 +8,19 @@ namespace CounterApp
     public class CounterViewController : MonoBehaviour
     {
         private ICountModel mCountModel;
+        CountModel2 mc2;
         void Start()
         {
             mCountModel = CounterApp.Get<ICountModel>();
             mCountModel.Count.OnValueChanged += OnCountChanged;
             mCountModel.Count.OnValueChanged?.Invoke(mCountModel.Count.Value);
+            mCountModel.Architecture.RegisterModel<CountModel2>(new CountModel2());
+            mc2 = CounterApp.Get<CountModel2>();
             transform.Find("BtnAdd").GetComponent<Button>().onClick.AddListener(delegate
             {
                 new AddCountCommand().Excute();
+                mc2.Count2.Value++;
+                Debug.Log(mc2.Count2.Value);
             });
             transform.Find("BtnSub").GetComponent<Button>().onClick.AddListener(delegate
             {
@@ -50,5 +55,18 @@ namespace CounterApp
             Value = 0,
         };
         public IArchitecture Architecture { get; set; }
+    }
+    public class CountModel2 : IModel
+    {
+        public IArchitecture Architecture { get; set; }
+
+        public void Init()
+        {
+
+        }
+        public BindableProperty<int> Count2 { get; } = new()
+        {
+            Value = 0,
+        };
     }
 }
