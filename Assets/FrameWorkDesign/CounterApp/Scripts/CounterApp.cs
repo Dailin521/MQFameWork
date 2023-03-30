@@ -6,7 +6,8 @@ namespace CounterApp
     {
         protected override void Init()
         {
-            Register<ICountModel>(new CountModel());
+            RegisterModel<ICountModel>(new CountModel());
+            RegisterUtility<IStorage>(new PlayerPrefsStorage());
             //Debug.Log("已注册");
         }
     }

@@ -4,7 +4,7 @@
     {
         protected override void Init()
         {
-            Register<IGameModel>(new GameModel());
+            RegisterModel<IGameModel>(new GameModel());
         }
     }
 }

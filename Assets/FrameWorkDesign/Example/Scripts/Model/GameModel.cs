@@ -1,6 +1,6 @@
 ﻿namespace FrameWorkDesign.Example
 {
-    public interface IGameModel
+    public interface IGameModel : IModel
     {
         BindableProperty<int> killCount { get; }
     }
@@ -10,6 +10,11 @@
         {
             Value = 0
         };
-    };
+        public IArchitecture Architecture { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
 
+        public void Init()
+        {
+
+        }
+    }
 }

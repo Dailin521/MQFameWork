@@ -5,7 +5,7 @@ namespace FrameWorkDesign
     public class IOCContainer
     {
         private Dictionary<Type, object> mInstances = new();
-        public void Register<T>(T instance) where T : class
+        public void Register<T>(T instance)
         {
             var key = typeof(T);
             if (mInstances.ContainsKey(key))

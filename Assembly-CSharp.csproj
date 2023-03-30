@@ -80,6 +80,9 @@
     <Compile Include="Assets\FrameWorkDesign\FrameWork\Event\Event.cs" />
     <Compile Include="Assets\FrameWorkDesign\Example\Scripts\Event\KilledOneEnemyEvent.cs" />
     <Compile Include="Assets\FrameWorkDesign\Example\Scripts\PointGame.cs" />
+    <Compile Include="Assets\FrameWorkDesign\CounterApp\Scripts\IStorage.cs" />
+    <Compile Include="Assets\FrameWorkDesign\FrameWork\Architecture\IBelongToArchitecture.cs" />
+    <Compile Include="Assets\FrameWorkDesign\FrameWork\Architecture\IModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
