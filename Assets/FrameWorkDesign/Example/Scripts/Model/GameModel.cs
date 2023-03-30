@@ -1,9 +1,12 @@
 ﻿namespace FrameWorkDesign.Example
 {
-    public class GameModel : Singleton<GameModel>
+    public interface IGameModel
     {
-        private GameModel() { }
-        public BindableProperty<int> killCount = new BindableProperty<int>()
+        BindableProperty<int> killCount { get; }
+    }
+    public class GameModel : IGameModel
+    {
+        public BindableProperty<int> killCount { get; } = new BindableProperty<int>()
         {
             Value = 0
         };

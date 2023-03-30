@@ -6,7 +6,7 @@ namespace CounterApp
     {
         protected override void Init()
         {
-            Register(new CountModel());
+            Register<ICountModel>(new CountModel());
             //Debug.Log("已注册");
         }
     }

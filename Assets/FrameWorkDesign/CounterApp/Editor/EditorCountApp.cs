@@ -20,7 +20,7 @@ namespace CounterApp
             {
                 new AddCountCommand().Excute();
             }
-            GUILayout.Label(CounterApp.Get<CountModel>().Count.Value.ToString());//GUI是实时渲染的
+            GUILayout.Label(CounterApp.Get<ICountModel>().Count.Value.ToString());//GUI是实时渲染的
             if (GUILayout.Button("-"))
             {
                 new SubCountCommand().Excute();

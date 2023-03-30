@@ -7,15 +7,14 @@ namespace CounterApp
 {
     public class CounterViewController : MonoBehaviour
     {
-        private CountModel mCountModel;
+        private ICountModel mCountModel;
         void Start()
         {
-            mCountModel = CounterApp.Get<CountModel>();
+            mCountModel = CounterApp.Get<ICountModel>();
             mCountModel.Count.OnValueChanged += OnCountChanged;
             transform.Find("BtnAdd").GetComponent<Button>().onClick.AddListener(delegate
             {
                 new AddCountCommand().Excute();
-                Debug.Log(CounterApp.Get<CountModel>().Count.Value);
             });
             transform.Find("BtnSub").GetComponent<Button>().onClick.AddListener(delegate
             {
@@ -31,9 +30,13 @@ namespace CounterApp
             mCountModel.Count.OnValueChanged -= OnCountChanged;
         }
     }
-    public class CountModel
+    public interface ICountModel
     {
-        public BindableProperty<int> Count = new()
+        public BindableProperty<int> Count { get; }
+    }
+    public class CountModel : ICountModel
+    {
+        public BindableProperty<int> Count { get; } = new()
         {
             Value = 0,
         };

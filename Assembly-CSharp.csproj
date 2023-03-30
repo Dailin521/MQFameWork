@@ -56,29 +56,30 @@
     <Analyzer Include="C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\FrameWorkDesign\FrameWork\Architecture\Architecture.cs" />
+    <Compile Include="Assets\FrameWorkDesign\Example\Scripts\Command\KillEnemyCommand.cs" />
     <Compile Include="Assets\FrameWorkDesign\Example\Scripts\Game\Game.cs" />
+    <Compile Include="Assets\FrameWorkDesign\Example\Scripts\Command\GameStartCommand.cs" />
     <Compile Include="Assets\FrameWorkDesign\CounterApp\Scripts\CounterViewController.cs" />
     <Compile Include="Assets\FrameWorkDesign\FrameWork\BindableProperty\BindableProperty.cs" />
     <Compile Include="Assets\FrameWorkDesign\CounterApp\Command\AddCountCommand.cs" />
+    <Compile Include="Assets\FrameWorkDesign\CounterApp\Scripts\CounterApp.cs" />
     <Compile Include="Assets\FrameWorkDesign\CounterApp\Command\SubCountCommand.cs" />
+    <Compile Include="Assets\FrameWorkDesign\Example\IOC\DIPExample.cs" />
     <Compile Include="Assets\FrameWorkDesign\FrameWork\Event\ActionTest.cs" />
+    <Compile Include="Assets\FrameWorkDesign\Example\IOC\IOCExample.cs" />
     <Compile Include="Assets\FrameWorkDesign\FrameWork\ICommand\ICommand.cs" />
     <Compile Include="Assets\FrameWorkDesign\Example\Scripts\Event\GamePassEvent.cs" />
     <Compile Include="Assets\FrameWorkDesign\Example\Scripts\UI\GameStartPanel.cs" />
     <Compile Include="Assets\FrameWorkDesign\Example\Scripts\Model\GameModel.cs" />
+    <Compile Include="Assets\FrameWorkDesign\FrameWork\IOC\IOCContainer.cs" />
+    <Compile Include="Assets\FrameWorkDesign\Example\Scripts\Singleton\Singleton.cs" />
     <Compile Include="Assets\FrameWorkDesign\Example\Scripts\Event\GameStartEvent.cs" />
     <Compile Include="Assets\FrameWorkDesign\Example\Scripts\UI\UI.cs" />
     <Compile Include="Assets\FrameWorkDesign\Example\Scripts\Game\Enemy.cs" />
     <Compile Include="Assets\FrameWorkDesign\FrameWork\Event\Event.cs" />
     <Compile Include="Assets\FrameWorkDesign\Example\Scripts\Event\KilledOneEnemyEvent.cs" />
-    <Compile Include="Assets\FrameWorkDesign\Example\Scripts\Command\KillEnemyCommand.cs" />
-    <Compile Include="Assets\FrameWorkDesign\Example\Scripts\Command\GameStartCommand.cs" />
-    <Compile Include="Assets\FrameWorkDesign\Example\Scripts\Singleton\Singleton.cs" />
-    <Compile Include="Assets\FrameWorkDesign\FrameWork\IOC\IOCContainer.cs" />
-    <Compile Include="Assets\FrameWorkDesign\Example\IOC\IOCExample.cs" />
-    <Compile Include="Assets\FrameWorkDesign\FrameWork\Architecture\Architecture.cs" />
-    <Compile Include="Assets\FrameWorkDesign\CounterApp\Scripts\CounterApp.cs" />
-    <Compile Include="Assets\FrameWorkDesign\Example\IOC\DIPExample.cs" />
+    <Compile Include="Assets\FrameWorkDesign\Example\Scripts\PointGame.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

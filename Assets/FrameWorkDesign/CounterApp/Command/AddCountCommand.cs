@@ -6,7 +6,7 @@ namespace CounterApp
     {
         public void Excute()
         {
-            CounterApp.Get<CountModel>()
+            CounterApp.Get<ICountModel>()
             .Count.Value++;
         }
     }
