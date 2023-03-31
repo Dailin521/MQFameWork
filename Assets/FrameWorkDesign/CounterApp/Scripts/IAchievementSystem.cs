@@ -7,13 +7,11 @@ namespace CounterApp
     {
 
     }
-    public class AchievementSystem : IAchievementSystem
+    public class AchievementSystem : AbstractSystem, IAchievementSystem
     {
-        public IArchitecture Architecture { get; set; }
-
-        public void Init()
+        protected override void OnInit()
         {
-            var countModel = Architecture.GetModel<ICountModel>();
+            var countModel = GetArchitecture().GetModel<ICountModel>();
             var previousCount = countModel.Count.Value;
             countModel.Count.OnValueChanged += newCount =>
             {

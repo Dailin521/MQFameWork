@@ -2,6 +2,6 @@
 {
     public interface IBelongToArchitecture
     {
-        public IArchitecture Architecture { get; set; }
+        public IArchitecture GetArchitecture();
     }
 }

@@ -84,5 +84,11 @@
 20.实现 System 层
 		*有状态，（管理数据）同时提供一些API访问，比如蓝牙，商城系统，服务器请求
 		*需要很多硬编码，同时将这些统一管理的，比如成就系统，分数统计系统等
+21.表现层的 IController 接口定义与实现
+		*Architecture 里实现 static IArchitecture Interface  属性，
+		*构造期间不能调用Unity的Api  , 差分两个接口，用函数获得，Get，Set
+		*不想每次都实现，定义抽象类继承两接口，在抽象类里实现，同时用一个abstract函数拓展子类初始化
+
+
 
          

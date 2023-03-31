@@ -88,6 +88,8 @@
     <Compile Include="Assets\FrameWorkDesign\Example\InterfaceDesign\InterfaceExample.cs" />
     <Compile Include="Assets\FrameWorkDesign\FrameWork\Architecture\ISystem.cs" />
     <Compile Include="Assets\FrameWorkDesign\CounterApp\Scripts\IAchievementSystem.cs" />
+    <Compile Include="Assets\FrameWorkDesign\CounterApp\Scripts\IController.cs" />
+    <Compile Include="Assets\FrameWorkDesign\FrameWork\Architecture\ICanSetArchitecture.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

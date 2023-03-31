@@ -20,6 +20,17 @@ namespace FrameWorkDesign
         List<ISystem> mSystems = new();
         List<IModel> models = new();
         private static T mArchitecture;
+        public static IArchitecture Interface
+        {
+            get
+            {
+                if (mArchitecture == null)
+                {
+                    MakeSureArchitecture();
+                }
+                return mArchitecture;
+            }
+        }
         //增加注册
         public static Action<T> OnRegisterPatch = p => { };
         //单例初始化
@@ -60,7 +71,7 @@ namespace FrameWorkDesign
         }
         public void RegisterModel<T2>(T2 model) where T2 : IModel
         {
-            model.Architecture = this;
+            model.SetArchitecture(this);
             mContainer.Register<T2>(model);
             if (!mInited)
             {
@@ -73,7 +84,7 @@ namespace FrameWorkDesign
         }
         public void RegisterSystem<T1>(T1 system) where T1 : ISystem
         {
-            system.Architecture = this;
+            system.SetArchitecture(this);
             mContainer.Register<T1>(system);
             if (!mInited)
             {
