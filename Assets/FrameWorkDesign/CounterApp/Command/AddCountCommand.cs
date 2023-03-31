@@ -2,12 +2,11 @@
 using UnityEngine;
 namespace CounterApp
 {
-    public struct AddCountCommand : ICommand
+    public class AddCountCommand : AbstractCommand
     {
-        public void Excute()
+        protected override void OnExcute()
         {
-            CounterApp.Get<ICountModel>()
-            .Count.Value++;
+            GetArchitecture().GetModel<ICountModel>().Count.Value++;
         }
     }
 }

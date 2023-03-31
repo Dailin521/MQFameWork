@@ -1,11 +1,10 @@
 ﻿namespace FrameWorkDesign.Example
 {
-    public class GameStartCommand : ICommand
+    public class GameStartCommand : AbstractCommand
     {
-        public void Excute()
+        protected override void OnExcute()
         {
             GameStartEvent.Trigger();
         }
-
     }
 }

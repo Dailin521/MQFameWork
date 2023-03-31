@@ -4,13 +4,13 @@ using UnityEngine;
 
 namespace FrameWorkDesign.Example
 {
-    public class KillEnemyCommand : ICommand
+    public class KillEnemyCommand : AbstractCommand
     {
-        public void Excute()
+        protected override void OnExcute()
         {
-            var gameModel = PointGame.Get<IGameModel>();
-            gameModel.killCount.Value++;
-            if (gameModel.killCount.Value == 10)
+            var gameModel = GetArchitecture().GetModel<IGameModel>();
+            gameModel.KillCount.Value++;
+            if (gameModel.KillCount.Value == 10)
             {
                 GamePassEvent.Trigger();
             }

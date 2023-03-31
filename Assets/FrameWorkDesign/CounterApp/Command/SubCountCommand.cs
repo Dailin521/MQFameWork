@@ -1,12 +1,11 @@
 ﻿using FrameWorkDesign;
 namespace CounterApp
 {
-    public class SubCountCommand : ICommand
+    public class SubCountCommand : AbstractCommand
     {
-        public void Excute()
+        protected override void OnExcute()
         {
-            CounterApp.Get<ICountModel>()
-            .Count.Value--;
+            GetArchitecture().GetModel<ICountModel>().Count.Value--;
         }
     }
 }

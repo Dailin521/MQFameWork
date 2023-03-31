@@ -6,11 +6,13 @@ namespace FrameWorkDesign
 {
     public interface IArchitecture
     {
-        T GetUtility<T>() where T : class;
+        T GetUtility<T>() where T : class, IUtility;
         T GetModel<T>() where T : class, IModel;
-        void RegisterUtility<T>(T utility);
+        void RegisterUtility<T>(T utility) where T : IUtility;
         void RegisterModel<T>(T instance) where T : IModel;
         void RegisterSystem<T>(T system) where T : ISystem;
+        void SendCommand<T>() where T : ICommand, new();
+        void SendCommand<T>(T command) where T : ICommand;
     }
     public abstract class Architecture<T> : IArchitecture where T : Architecture<T>, new()
     {
@@ -95,12 +97,12 @@ namespace FrameWorkDesign
                 system.Init();
             }
         }
-        public T1 GetUtility<T1>() where T1 : class
+        public T1 GetUtility<T1>() where T1 : class, IUtility
         {
             return mContainer.Get<T1>();
         }
 
-        public void RegisterUtility<T1>(T1 utility)
+        public void RegisterUtility<T1>(T1 utility) where T1 : IUtility
         {
             mContainer.Register<T1>(utility);
         }
@@ -112,6 +114,19 @@ namespace FrameWorkDesign
         public T1 GetModel<T1>() where T1 : class, IModel
         {
             return mContainer.Get<T1>();
+        }
+
+        public void SendCommand<T1>() where T1 : ICommand, new()
+        {
+            var command = new T1();
+            command.SetArchitecture(this);
+            command.Excute();
+        }
+
+        public void SendCommand<T1>(T1 command) where T1 : ICommand
+        {
+            command.SetArchitecture(this);
+            command.Excute();
         }
     }
 }

@@ -17,12 +17,12 @@ namespace CounterApp
             mCountModel.Count.OnValueChanged?.Invoke(mCountModel.Count.Value);
             transform.Find("BtnAdd").GetComponent<Button>().onClick.AddListener(delegate
             {
-                new AddCountCommand().Excute();
+                GetArchitecture().SendCommand(new AddCountCommand());
                 //Debug.Log(mc2.Count2.Value);
             });
             transform.Find("BtnSub").GetComponent<Button>().onClick.AddListener(delegate
             {
-                new SubCountCommand().Excute();
+                GetArchitecture().SendCommand(new SubCountCommand());
             });
         }
         private void OnCountChanged(int obj)

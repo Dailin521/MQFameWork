@@ -89,6 +89,12 @@
 		*构造期间不能调用Unity的Api  , 差分两个接口，用函数获得，Get，Set
 		*不想每次都实现，定义抽象类继承两接口，在抽象类里实现，同时用一个abstract函数拓展子类初始化
 
+22.IUtiilty 实现 与 ICommand 完善
+		*抽象类AbstractCommand继承ICommand，并通过接口显示实现，和abstract方法拓展接口Excute
+		*Command类继承AbstractCommand接口，并实现抽象Excute方法
+		*调用Excute方法，是要持有Architecture实例，同时IA拓展SendCommand接口函数，通过实例调用SendCommand接口函数，而接口函数内部进行直接调用
+		*表现层先实现接口IController，对Architecture进行赋值，通过GetArchitecture得到实例后进行SenCommand（传入对应Command类）
+
 
 
          

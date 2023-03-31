@@ -1,12 +1,15 @@
 ﻿
+using FrameWorkDesign;
 using System;
 using UnityEditor;
 using UnityEngine;
 
 namespace CounterApp
 {
-    public class EditorCountApp : EditorWindow
+    public class EditorCountApp : EditorWindow, IController
     {
+        public BindableProperty<int> Count => throw new NotImplementedException();
+
         [MenuItem("EditorCountApp/Open")]
         static void Open()
         {
@@ -26,17 +29,22 @@ namespace CounterApp
         {
             if (GUILayout.Button("+"))
             {
-                new AddCountCommand().Excute();
+                GetArchitecture().SendCommand<AddCountCommand>();
             }
             GUILayout.Label(CounterApp.Get<ICountModel>().Count.Value.ToString());//GUI是实时渲染的
             if (GUILayout.Button("-"))
             {
-                new SubCountCommand().Excute();
+                GetArchitecture().SendCommand(new SubCountCommand());
             }
         }
         private void OnDestroy()
         {
             CounterApp.OnDestroy();
+        }
+
+        public IArchitecture GetArchitecture()
+        {
+            return CounterApp.Interface;
         }
     }
 }

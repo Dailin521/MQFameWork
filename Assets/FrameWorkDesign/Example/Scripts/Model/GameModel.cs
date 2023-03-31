@@ -2,11 +2,11 @@
 {
     public interface IGameModel : IModel
     {
-        BindableProperty<int> killCount { get; }
+        BindableProperty<int> KillCount { get; }
     }
     public class GameModel : AbstractModel, IGameModel
     {
-        public BindableProperty<int> killCount { get; } = new BindableProperty<int>()
+        public BindableProperty<int> KillCount { get; } = new BindableProperty<int>()
         {
             Value = 0
         };
