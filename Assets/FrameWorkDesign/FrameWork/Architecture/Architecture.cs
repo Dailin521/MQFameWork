@@ -1,20 +1,23 @@
 ﻿using System;
 using System.Collections.Generic;
+using UnityEngine.Rendering.VirtualTexturing;
 
 namespace FrameWorkDesign
 {
     public interface IArchitecture
     {
         T GetUtility<T>() where T : class;
+        T GetModel<T>() where T : class, IModel;
         void RegisterUtility<T>(T utility);
         void RegisterModel<T>(T instance) where T : IModel;
-
+        void RegisterSystem<T>(T system) where T : ISystem;
     }
     public abstract class Architecture<T> : IArchitecture where T : Architecture<T>, new()
     {
         //Model初始化
         private bool mInited = false;
         //model注册列表
+        List<ISystem> mSystems = new();
         List<IModel> models = new();
         private static T mArchitecture;
         //增加注册
@@ -34,6 +37,11 @@ namespace FrameWorkDesign
                     model.Init();
                 }
                 mArchitecture.models.Clear();
+                foreach (var system in mArchitecture.mSystems)
+                {
+                    system.Init();
+                }
+                mArchitecture.mSystems.Clear();
                 mArchitecture.mInited = true;
             }
         }
@@ -63,6 +71,19 @@ namespace FrameWorkDesign
                 model.Init();
             }
         }
+        public void RegisterSystem<T1>(T1 system) where T1 : ISystem
+        {
+            system.Architecture = this;
+            mContainer.Register<T1>(system);
+            if (!mInited)
+            {
+                mSystems.Add(system);
+            }
+            else
+            {
+                system.Init();
+            }
+        }
         public T1 GetUtility<T1>() where T1 : class
         {
             return mContainer.Get<T1>();
@@ -75,6 +96,11 @@ namespace FrameWorkDesign
         public static void OnDestroy()
         {
             mArchitecture = null;
+        }
+
+        public T1 GetModel<T1>() where T1 : class, IModel
+        {
+            return mContainer.Get<T1>();
         }
     }
 }

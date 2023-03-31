@@ -71,20 +71,23 @@
     <Compile Include="Assets\FrameWorkDesign\FrameWork\ICommand\ICommand.cs" />
     <Compile Include="Assets\FrameWorkDesign\Example\Scripts\Event\GamePassEvent.cs" />
     <Compile Include="Assets\FrameWorkDesign\Example\Scripts\UI\GameStartPanel.cs" />
+    <Compile Include="Assets\FrameWorkDesign\FrameWork\Architecture\IBelongToArchitecture.cs" />
     <Compile Include="Assets\FrameWorkDesign\Example\Scripts\Model\GameModel.cs" />
+    <Compile Include="Assets\FrameWorkDesign\FrameWork\Architecture\IModel.cs" />
     <Compile Include="Assets\FrameWorkDesign\FrameWork\IOC\IOCContainer.cs" />
+    <Compile Include="Assets\FrameWorkDesign\CounterApp\Scripts\IStorage.cs" />
+    <Compile Include="Assets\FrameWorkDesign\Example\InterfaceDesign\InterfaceDesign.cs" />
     <Compile Include="Assets\FrameWorkDesign\Example\Scripts\Singleton\Singleton.cs" />
     <Compile Include="Assets\FrameWorkDesign\Example\Scripts\Event\GameStartEvent.cs" />
     <Compile Include="Assets\FrameWorkDesign\Example\Scripts\UI\UI.cs" />
     <Compile Include="Assets\FrameWorkDesign\Example\Scripts\Game\Enemy.cs" />
     <Compile Include="Assets\FrameWorkDesign\FrameWork\Event\Event.cs" />
-    <Compile Include="Assets\FrameWorkDesign\Example\Scripts\Event\KilledOneEnemyEvent.cs" />
     <Compile Include="Assets\FrameWorkDesign\Example\Scripts\PointGame.cs" />
-    <Compile Include="Assets\FrameWorkDesign\CounterApp\Scripts\IStorage.cs" />
-    <Compile Include="Assets\FrameWorkDesign\FrameWork\Architecture\IBelongToArchitecture.cs" />
-    <Compile Include="Assets\FrameWorkDesign\FrameWork\Architecture\IModel.cs" />
-    <Compile Include="Assets\FrameWorkDesign\Example\InterfaceDesign\InterfaceDesign.cs" />
+    <Compile Include="Assets\FrameWorkDesign\Example\Scripts\Event\KilledOneEnemyEvent.cs" />
     <Compile Include="Assets\FrameWorkDesign\Example\InterfaceDesign\InterfaceRuleDesign.cs" />
+    <Compile Include="Assets\FrameWorkDesign\Example\InterfaceDesign\InterfaceExample.cs" />
+    <Compile Include="Assets\FrameWorkDesign\FrameWork\Architecture\ISystem.cs" />
+    <Compile Include="Assets\FrameWorkDesign\CounterApp\Scripts\IAchievementSystem.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

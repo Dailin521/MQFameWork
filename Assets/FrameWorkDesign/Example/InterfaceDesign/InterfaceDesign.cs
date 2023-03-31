@@ -10,10 +10,7 @@ namespace FrameWorkDesign.Example
             ICustomScript myScript = new MyClass();
             myScript.Start1();
             myScript.Update1();
-
         }
-
-
     }
     interface ICustomScript
     {
@@ -26,7 +23,6 @@ namespace FrameWorkDesign.Example
         {
             OnStart();
         }
-
         void ICustomScript.Update1()
         {
             OnUpdate();
@@ -41,7 +37,6 @@ namespace FrameWorkDesign.Example
             Debug.Log("start");
 
         }
-
         protected override void OnUpdate()
         {
             Debug.Log("update");

@@ -6,13 +6,21 @@ namespace FrameWorkDesign.Example
     {
         public class OnlyCanDo1 : ICanDo1
         {
-            CanDoEverything IHasEverything.doEverything { get; } = new CanDoEverything();
+            CanDoEverything IHasEverything.canDoEverything { get; } = new CanDoEverything();
+        }
+        public class OnlyCanDo2 : ICanDo1, ICanDo2
+        {
+            CanDoEverything IHasEverything.canDoEverything { get; } = new CanDoEverything();
         }
 
         private void Start()
         {
             OnlyCanDo1 ocd = new OnlyCanDo1();
-            //ocd.DS1();
+            OnlyCanDo2 ocd2 = new OnlyCanDo2();
+            ocd.DoSomething1();
+
+            ocd2.DoSomething2();
+            ocd2.DoSomething1();
         }
 
     }
@@ -29,7 +37,7 @@ namespace FrameWorkDesign.Example
     }
     public interface IHasEverything
     {
-        public CanDoEverything doEverything { get; }
+        public CanDoEverything canDoEverything { get; }
     }
     public interface ICanDo1 : IHasEverything
     {
@@ -41,9 +49,13 @@ namespace FrameWorkDesign.Example
     }
     public static class ICanDo1Extension1
     {
-        public static void DoSomething1(ICanDo1 self)
+        public static void DoSomething1(this ICanDo1 self)
         {
-            self.doEverything.DS1();
+            self.canDoEverything.DS1();
+        }
+        public static void DoSomething2(this ICanDo2 self)
+        {
+            self.canDoEverything.DS2();
         }
     }
 

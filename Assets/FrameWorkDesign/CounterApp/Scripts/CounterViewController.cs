@@ -20,7 +20,7 @@ namespace CounterApp
             {
                 new AddCountCommand().Excute();
                 mc2.Count2.Value++;
-                Debug.Log(mc2.Count2.Value);
+                //Debug.Log(mc2.Count2.Value);
             });
             transform.Find("BtnSub").GetComponent<Button>().onClick.AddListener(delegate
             {
