@@ -14,6 +14,10 @@ namespace FrameWorkDesign
         void RegisterSystem<T>(T system) where T : ISystem;
         void SendCommand<T>() where T : ICommand, new();
         void SendCommand<T>(T command) where T : ICommand;
+        void SendEvent<T>() where T : new();
+        void SendEvent<T>(T e);
+        IUnRegister RegisterEvent<T>(Action<T> OnEvent);
+        void UnRegisterEvent<T>(Action<T> OnEvent);
     }
     public abstract class Architecture<T> : IArchitecture where T : Architecture<T>, new()
     {
@@ -134,5 +138,25 @@ namespace FrameWorkDesign
             command.Excute();
         }
 
+        ITypeEventSystem mTypeEventSystem = new TypeEventSystem();
+        public void SendEvent<T1>() where T1 : new()
+        {
+            mTypeEventSystem.Send<T1>();
+        }
+
+        public void SendEvent<T1>(T1 e)
+        {
+            mTypeEventSystem.Send<T1>(e);
+        }
+
+        public IUnRegister RegisterEvent<T1>(Action<T1> OnEvent)
+        {
+            return mTypeEventSystem.Register<T1>(OnEvent);
+        }
+
+        public void UnRegisterEvent<T1>(Action<T1> OnEvent)
+        {
+            mTypeEventSystem.UnRegister<T1>(OnEvent);
+        }
     }
 }

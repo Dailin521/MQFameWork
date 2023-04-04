@@ -57,7 +57,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\FrameWorkDesign\FrameWork\Architecture\Architecture.cs" />
-    <Compile Include="Assets\FrameWorkDesign\CounterApp\Scripts\IController.cs" />
+    <Compile Include="Assets\FrameWorkDesign\FrameWork\Architecture\IController.cs" />
     <Compile Include="Assets\FrameWorkDesign\Example\Scripts\Command\KillEnemyCommand.cs" />
     <Compile Include="Assets\FrameWorkDesign\Example\Scripts\Game\Game.cs" />
     <Compile Include="Assets\FrameWorkDesign\Example\Scripts\Command\GameStartCommand.cs" />
@@ -88,13 +88,16 @@
     <Compile Include="Assets\FrameWorkDesign\FrameWork\Architecture\Rule\ICanGetUtility.cs" />
     <Compile Include="Assets\FrameWorkDesign\FrameWork\Architecture\Rule\ICanGetModel.cs" />
     <Compile Include="Assets\FrameWorkDesign\Example\Scripts\Game\Enemy.cs" />
-    <Compile Include="Assets\FrameWorkDesign\FrameWork\Event\Event.cs" />
     <Compile Include="Assets\FrameWorkDesign\Example\Scripts\PointGame.cs" />
     <Compile Include="Assets\FrameWorkDesign\Example\Scripts\Event\KilledOneEnemyEvent.cs" />
     <Compile Include="Assets\FrameWorkDesign\Example\InterfaceDesign\InterfaceRuleDesign.cs" />
     <Compile Include="Assets\FrameWorkDesign\CounterApp\Scripts\IAchievementSystem.cs" />
     <Compile Include="Assets\FrameWorkDesign\FrameWork\Architecture\Rule\ICanGetSystem.cs" />
     <Compile Include="Assets\FrameWorkDesign\FrameWork\Architecture\Rule\ICanSendCommand.cs" />
+    <Compile Include="Assets\FrameWorkDesign\FrameWork\Event\TypeEventSystem.cs" />
+    <Compile Include="Assets\FrameWorkDesign\Example\Event\TypeEventSystemExample.cs" />
+    <Compile Include="Assets\FrameWorkDesign\FrameWork\Architecture\Rule\ICanSendEvent.cs" />
+    <Compile Include="Assets\FrameWorkDesign\FrameWork\Architecture\Rule\ICanRegisterEvent.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

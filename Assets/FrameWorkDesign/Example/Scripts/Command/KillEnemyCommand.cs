@@ -12,7 +12,7 @@ namespace FrameWorkDesign.Example
             gameModel.KillCount.Value++;
             if (gameModel.KillCount.Value == 10)
             {
-                GamePassEvent.Trigger();
+                this.SendEvent<GamePassEvent>();
             }
         }
     }

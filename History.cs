@@ -96,7 +96,11 @@
 		*表现层先实现接口IController，对Architecture进行赋值，通过GetArchitecture得到实例后进行SenCommand（传入对应Command类）
 23.架构使用规范实现
 		*对IModel，ISystem，ICommand，IController，增加使用规则
-
+24.增加事件的使用规则
+		*IController 可以监听事件
+		*ICommand 可以发送事件
+		*ISystem 可以发送和监听事件
+		*IModel 可以发送事件
 
 
          
