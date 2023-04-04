@@ -8,6 +8,7 @@ namespace FrameWorkDesign
     {
         T GetUtility<T>() where T : class, IUtility;
         T GetModel<T>() where T : class, IModel;
+        T GetSystem<T>() where T : class, ISystem;
         void RegisterUtility<T>(T utility) where T : IUtility;
         void RegisterModel<T>(T instance) where T : IModel;
         void RegisterSystem<T>(T system) where T : ISystem;
@@ -115,6 +116,10 @@ namespace FrameWorkDesign
         {
             return mContainer.Get<T1>();
         }
+        T1 IArchitecture.GetSystem<T1>()
+        {
+            return mContainer.Get<T1>();
+        }
 
         public void SendCommand<T1>() where T1 : ICommand, new()
         {
@@ -128,5 +133,6 @@ namespace FrameWorkDesign
             command.SetArchitecture(this);
             command.Excute();
         }
+
     }
 }

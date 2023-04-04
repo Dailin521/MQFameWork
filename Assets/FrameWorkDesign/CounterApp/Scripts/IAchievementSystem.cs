@@ -11,7 +11,7 @@ namespace CounterApp
     {
         protected override void OnInit()
         {
-            var countModel = GetArchitecture().GetModel<ICountModel>();
+            var countModel = this.GetModel<ICountModel>();
             var previousCount = countModel.Count.Value;
             countModel.Count.OnValueChanged += newCount =>
             {

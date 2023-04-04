@@ -12,17 +12,17 @@ namespace CounterApp
 
         void Start()
         {
-            mCountModel = GetArchitecture().GetModel<ICountModel>();
+            mCountModel = this.GetModel<ICountModel>();
             mCountModel.Count.OnValueChanged += OnCountChanged;
             mCountModel.Count.OnValueChanged?.Invoke(mCountModel.Count.Value);
             transform.Find("BtnAdd").GetComponent<Button>().onClick.AddListener(delegate
             {
-                GetArchitecture().SendCommand(new AddCountCommand());
+                this.SendCommand(new AddCountCommand());
                 //Debug.Log(mc2.Count2.Value);
             });
             transform.Find("BtnSub").GetComponent<Button>().onClick.AddListener(delegate
             {
-                GetArchitecture().SendCommand(new SubCountCommand());
+                this.SendCommand(new SubCountCommand());
             });
         }
         private void OnCountChanged(int obj)
@@ -36,7 +36,7 @@ namespace CounterApp
             CounterApp.OnDestroy();
         }
 
-        public IArchitecture GetArchitecture()
+        IArchitecture IBelongToArchitecture.GetArchitecture()
         {
             return CounterApp.Interface;
         }
@@ -49,7 +49,7 @@ namespace CounterApp
     {
         protected override void OnInit()
         {
-            var storage = GetArchitecture().GetUtility<IStorage>();
+            var storage = this.GetUtility<IStorage>();
             Count.Value = storage.LoadInt("COUNTER_COUNT", 0);
             Count.OnValueChanged += c => { storage.SaveInt("COUNTER_COUNT", c); };
         }

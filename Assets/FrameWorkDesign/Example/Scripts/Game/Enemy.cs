@@ -5,7 +5,7 @@ namespace FrameWorkDesign.Example
     {
         public GameObject GamePassPanel;
 
-        public IArchitecture GetArchitecture()
+        IArchitecture IBelongToArchitecture.GetArchitecture()
         {
             return PointGame.Interface;
         }
@@ -13,7 +13,7 @@ namespace FrameWorkDesign.Example
         public void OnMouseDown()
         {
             Destroy(gameObject);
-            GetArchitecture().SendCommand(new KillEnemyCommand());
+            this.SendCommand(new KillEnemyCommand());
         }
     }
 }

@@ -5,7 +5,7 @@ namespace CounterApp
     {
         protected override void OnExcute()
         {
-            GetArchitecture().GetModel<ICountModel>().Count.Value--;
+            this.GetModel<ICountModel>().Count.Value--;
         }
     }
 }

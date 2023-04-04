@@ -29,12 +29,12 @@ namespace CounterApp
         {
             if (GUILayout.Button("+"))
             {
-                GetArchitecture().SendCommand<AddCountCommand>();
+                this.SendCommand<AddCountCommand>();
             }
             GUILayout.Label(CounterApp.Get<ICountModel>().Count.Value.ToString());//GUI是实时渲染的
             if (GUILayout.Button("-"))
             {
-                GetArchitecture().SendCommand(new SubCountCommand());
+                this.SendCommand(new SubCountCommand());
             }
         }
         private void OnDestroy()
@@ -42,7 +42,7 @@ namespace CounterApp
             CounterApp.OnDestroy();
         }
 
-        public IArchitecture GetArchitecture()
+        IArchitecture IBelongToArchitecture.GetArchitecture()
         {
             return CounterApp.Interface;
         }

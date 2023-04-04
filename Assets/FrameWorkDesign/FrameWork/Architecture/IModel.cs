@@ -1,13 +1,13 @@
 ﻿namespace FrameWorkDesign
 {
-    public interface IModel : IBelongToArchitecture, ICanSetArchitecture
+    public interface IModel : IBelongToArchitecture, ICanSetArchitecture, ICanGetUtility
     {
         void Init();
     }
     public abstract class AbstractModel : IModel
     {
         private IArchitecture mArchitecture;
-        public IArchitecture GetArchitecture()
+        IArchitecture IBelongToArchitecture.GetArchitecture()
         {
             return mArchitecture;
         }
@@ -17,7 +17,7 @@
             OnInit();
         }
 
-        public void SetArchitecture(IArchitecture architecture)
+        void ICanSetArchitecture.SetArchitecture(IArchitecture architecture)
         {
             mArchitecture = architecture;
         }

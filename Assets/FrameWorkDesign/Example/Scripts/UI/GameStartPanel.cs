@@ -7,17 +7,16 @@ namespace FrameWorkDesign.Example
     {
         public GameObject Enemys;
 
-        public IArchitecture GetArchitecture()
+        IArchitecture IBelongToArchitecture.GetArchitecture()
         {
             return PointGame.Interface;
         }
-
         private void Start()
         {
             transform.Find("btnStart").GetComponent<Button>().onClick.AddListener(() =>
             {
                 gameObject.SetActive(false);
-                GetArchitecture().SendCommand(new GameStartCommand());
+                this.SendCommand(new GameStartCommand());
             });
         }
     }

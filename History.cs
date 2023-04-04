@@ -94,6 +94,8 @@
 		*Command类继承AbstractCommand接口，并实现抽象Excute方法
 		*调用Excute方法，是要持有Architecture实例，同时IA拓展SendCommand接口函数，通过实例调用SendCommand接口函数，而接口函数内部进行直接调用
 		*表现层先实现接口IController，对Architecture进行赋值，通过GetArchitecture得到实例后进行SenCommand（传入对应Command类）
+23.架构使用规范实现
+		*对IModel，ISystem，ICommand，IController，增加使用规则
 
 
 
