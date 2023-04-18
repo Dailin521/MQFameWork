@@ -1,6 +1,6 @@
 ﻿namespace FrameWorkDesign.Example
 {
-    public struct GameStartEvent
+    public class OnMissEvent
     {
 
     }

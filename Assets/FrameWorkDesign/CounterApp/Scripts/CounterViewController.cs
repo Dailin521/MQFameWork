@@ -13,8 +13,7 @@ namespace CounterApp
         void Start()
         {
             mCountModel = this.GetModel<ICountModel>();
-            mCountModel.Count.OnValueChanged += OnCountChanged;
-            mCountModel.Count.OnValueChanged?.Invoke(mCountModel.Count.Value);
+            mCountModel.Count.RegisterWithInitValue(OnCountChanged).UnRegisterWhenGameObjDestroyed(gameObject);
             transform.Find("BtnAdd").GetComponent<Button>().onClick.AddListener(delegate
             {
                 this.SendCommand(new AddCountCommand());
@@ -31,7 +30,7 @@ namespace CounterApp
         }
         private void OnDestroy()
         {
-            mCountModel.Count.OnValueChanged -= OnCountChanged;
+
             mCountModel = null;
             CounterApp.OnDestroy();
         }
@@ -51,7 +50,7 @@ namespace CounterApp
         {
             var storage = this.GetUtility<IStorage>();
             Count.Value = storage.LoadInt("COUNTER_COUNT", 0);
-            Count.OnValueChanged += c => { storage.SaveInt("COUNTER_COUNT", c); };
+            Count.Register(c => { storage.SaveInt("COUNTER_COUNT", c); });
         }
         public BindableProperty<int> Count { get; } = new()
         {

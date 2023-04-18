@@ -13,7 +13,7 @@ namespace CounterApp
         {
             var countModel = this.GetModel<ICountModel>();
             var previousCount = countModel.Count.Value;
-            countModel.Count.OnValueChanged += newCount =>
+            countModel.Count.Register(newCount =>
             {
                 if (previousCount < 10 && newCount >= 10)
                 {
@@ -24,7 +24,7 @@ namespace CounterApp
                     Debug.Log("解锁20击成就");
                 }
                 previousCount = newCount;
-            };
+            });
         }
     }
 }

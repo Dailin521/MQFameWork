@@ -1,5 +1,5 @@
-﻿#if UNITY_EDITOR
-using FrameWorkDesign;
+﻿using FrameWorkDesign;
+#if UNITY_EDITOR
 using UnityEditor;
 #endif
 using UnityEngine;

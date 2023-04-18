@@ -66,16 +66,7 @@ namespace FrameWorkDesign
         //模块注册，子类实现
         protected abstract void Init();
         IOCContainer mContainer = new();
-        public static G Get<G>() where G : class
-        {
-            MakeSureArchitecture();
-            return mArchitecture.mContainer.Get<G>();
-        }
-        public static void Register<R>(R instance)
-        {
-            MakeSureArchitecture();
-            mArchitecture.mContainer.Register<R>(instance);
-        }
+
         public void RegisterModel<T2>(T2 model) where T2 : IModel
         {
             model.SetArchitecture(this);
