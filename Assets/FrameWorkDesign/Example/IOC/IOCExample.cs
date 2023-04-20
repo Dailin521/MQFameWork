@@ -11,6 +11,7 @@ namespace FrameWorkDesign.Example
         {
             container.Register<IBluetoothManager>(new BluetoothManager());
             container.Register<IBluetoothManager>(new BluetoothManagerB());
+            container.Register<IBluetoothManager>(new BluetoothManager());
             var blutoothManager = container.Get<IBluetoothManager>();
             blutoothManager.Connect();
         }

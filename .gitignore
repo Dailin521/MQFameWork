@@ -6,3 +6,5 @@ Temp/
 *.vsidx
 *.lock
 .vs/
+*.csproj
+ProjectSettings/Packages/com.unity.testtools.codecoverage/Settings.json

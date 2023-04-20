@@ -8,8 +8,10 @@ namespace FrameWorkDesign.Example
         void Start()
         {
             ICustomScript myScript = new MyClass();
+            ICustomScript myScript1 = new MyClass1();
             myScript.Start1();
             myScript.Update1();
+            myScript1.Start1 ();
         }
     }
     interface ICustomScript
@@ -19,7 +21,7 @@ namespace FrameWorkDesign.Example
     }
     public abstract class CustomScript : ICustomScript
     {
-        void ICustomScript.Start1()
+        public void Start1()
         {
             OnStart();
         }
@@ -35,11 +37,21 @@ namespace FrameWorkDesign.Example
         protected override void OnStart()
         {
             Debug.Log("start");
-
         }
         protected override void OnUpdate()
         {
             Debug.Log("update");
+        }
+    }
+    public class MyClass1 : CustomScript
+    {
+        protected override void OnStart()
+        {
+            Debug.Log("start1");
+        }
+        protected override void OnUpdate()
+        {
+            Debug.Log("update1");
         }
     }
 }
